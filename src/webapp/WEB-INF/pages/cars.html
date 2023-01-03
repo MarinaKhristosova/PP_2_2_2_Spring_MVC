@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CARS</title>
+
+</head>
+<h1>CARS:</h1>
+
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>BRAND</th>
+            <th>MODEL</th>
+            <th>YEAR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car, iterStat : ${carList}"
+            th:style="${iterStat}? 'font-weight: bold;'">
+            <td th:text="${iterStat.index}+1"></td>
+            <td th:text="${car.brand}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.year}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
